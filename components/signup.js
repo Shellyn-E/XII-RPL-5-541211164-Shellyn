@@ -1,30 +1,23 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet, Image } from "react-native";
+import CustomButton from "./element/CustomButtonLogin";
+import CustomInput from "./element/CustomInput";
 
-export default function Signup({ navigation }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSignup = () => {
-    if (email === "shellyneuriska@gmail.com" && password === "12345") {
-      navigation.navigate("HomeScreen");
-    }
-  };
-
+export default function Signup() {
   return (
     <View style={styles.container}>
       <Image source={require("../assets/logo.png")} style={styles.logo}></Image>
       <Text style={styles.signup}>Sign Up</Text>
       <Text style={styles.desc}>masuk untuk melanjutkan</Text>
       <View style={{ alignItems: "center" }}>
-        <TextInput style={styles.input} placeholder="Nama Lengkap" />
-        <TextInput style={styles.input} placeholder="Username / Email" />
-        <TextInput
+        <CustomInput style={styles.input} placeholder="Nama Lengkap" />
+        <CustomInput style={styles.input} placeholder="Username / Email" />
+        <CustomInput
           style={styles.input}
           placeholder="Password"
           secureTextEntry={true}
         />
-        <TextInput
+        <CustomInput
           style={styles.input}
           placeholder="Ulang Password"
           secureTextEntry={true}
@@ -32,9 +25,9 @@ export default function Signup({ navigation }) {
         <Text style={styles.forgot}>Lupa Password?</Text>
       </View>
       <View style={{ width: 300, marginLeft: 40 }}>
-        <Button title="Daftar" />
+        <CustomButton title="Daftar" />
         <Text style={styles.text}>atau dengan</Text>
-        <Button title="Google" color={""} />
+        <CustomButton title="Google" color={""} />
         <Text style={styles.text}>Sudah punya akun? Masuk</Text>
       </View>
     </View>

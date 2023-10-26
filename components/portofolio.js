@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -9,13 +9,26 @@ import {
   TextInput,
   Button,
 } from "react-native";
+import CustomInput from "./element/CustomInput";
+import CustomImage from "./element/CustomImage";
+import CustomButton from "./element/CustomButtonPorto";
 
 export default function Portofolio() {
+  const [jumlah, setJumlah] = useState(0);
+
+  const handleLike = () => {
+    setJumlah(jumlah + 1);
+  };
+
+  const handleDislike = () => {
+    setJumlah(jumlah - 1);
+  };
+
   return (
     <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
-          <Image
+          <CustomImage
             source={require("../assets/profile.jpeg")}
             style={styles.profile}
           />
@@ -25,35 +38,53 @@ export default function Portofolio() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
 
-          <Button title="Contact Me" color={"#2c1b16"} />
+          <CustomButton
+            title="Contact Me"
+            color={"#2c1b16"}
+            onPress={() => alert("hello!")}
+          />
 
           <Text style={styles.recent}>My Recent Project</Text>
 
-          <Image
+          <CustomImage
             source={require("../assets/project-1.png")}
             style={styles.project}
           />
           <Text style={styles.projectTitle}>Project 1</Text>
           <Text style={styles.projectDesc}>Description Project 1</Text>
 
-          <Image
+          <CustomImage
             source={require("../assets/project-2.png")}
             style={styles.project}
           />
           <Text style={styles.projectTitle}>Project 2</Text>
           <Text style={styles.projectDesc}>Description Project 2</Text>
 
-          <TextInput style={styles.input} placeholder="text me" />
+          <CustomInput style={styles.input} placeholder="text me" />
+
+          <View style={styles.likes}>
+            <CustomButton
+              title="Likes"
+              color={"#2c1b16"}
+              onPress={handleLike}
+            />
+            <CustomButton
+              title="Dislike"
+              color={"#2c1b16"}
+              onPress={handleDislike}
+            />
+          </View>
+          <Text style={styles.count}>Likes: {jumlah}</Text>
 
           <View style={styles.footer}>
-            <Image
+            <CustomImage
               source={require("../assets/github.png")}
               style={styles.socmed}
-            ></Image>
-            <Image
+            />
+            <CustomImage
               source={require("../assets/linkedin.png")}
               style={styles.socmed}
-            ></Image>
+            />
           </View>
         </View>
       </ScrollView>
@@ -64,7 +95,7 @@ export default function Portofolio() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#5d4a3e",
+    // backgroundColor: "#5d4a3e",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -125,6 +156,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 8,
     // backgroundColor: "#5d4a3e",
+  },
+  likes: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  count: {
+    fontSize: 15,
+    width: 50,
+    color: "#2c1b16",
   },
   footer: {
     flexDirection: "row",

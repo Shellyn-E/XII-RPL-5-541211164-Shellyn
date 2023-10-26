@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet, Image } from "react-native";
+import CustomButton from "./element/CustomButtonLogin";
+import CustomInput from "./element/CustomInput";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
@@ -17,13 +19,13 @@ export default function Login({ navigation }) {
       <Text style={styles.login}>Login</Text>
       <Text style={styles.desc}>masuk untuk melanjutkan</Text>
       <View style={{ alignItems: "center" }}>
-        <TextInput
+        <CustomInput
           style={styles.input}
           placeholder="Email"
           onChangeText={(text) => setEmail(text)}
           value={email}
         />
-        <TextInput
+        <CustomInput
           style={styles.input}
           placeholder="Password"
           secureTextEntry={true}
@@ -33,9 +35,9 @@ export default function Login({ navigation }) {
         <Text style={styles.forgot}>Lupa Password?</Text>
       </View>
       <View style={{ width: 300, marginLeft: 40 }}>
-        <Button title="Masuk" onPress={handleLogin} />
+        <CustomButton title="Masuk" onPress={""} />
         <Text style={styles.text}>atau dengan</Text>
-        <Button title="Google" color={""} />
+        <CustomButton title="Google" color={""} />
         <Text style={styles.text}>Belum punya akun? Daftar</Text>
       </View>
     </View>
