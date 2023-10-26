@@ -7,6 +7,7 @@ import {
   StyleSheet,
   SafeAreaView,
   TextInput,
+  Button,
 } from "react-native";
 
 export default function Portofolio() {
@@ -24,6 +25,8 @@ export default function Portofolio() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
 
+          <Button title="Contact Me" color={"#2c1b16"} />
+
           <Text style={styles.recent}>My Recent Project</Text>
 
           <Image
@@ -40,7 +43,7 @@ export default function Portofolio() {
           <Text style={styles.projectTitle}>Project 2</Text>
           <Text style={styles.projectDesc}>Description Project 2</Text>
 
-          <TextInput style={styles.input} placeholder="contact me" />
+          <TextInput style={styles.input} placeholder="text me" />
 
           <View style={styles.footer}>
             <Image
@@ -82,6 +85,7 @@ const styles = StyleSheet.create({
     width: 275,
     textAlign: "center",
     marginTop: 10,
+    marginBottom: 25,
     color: "#2c1b16",
   },
   project: {

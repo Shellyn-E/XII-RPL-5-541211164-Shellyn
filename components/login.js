@@ -15,20 +15,29 @@ export default function Login({ navigation }) {
     <View style={styles.container}>
       <Image source={require("../assets/logo.png")} style={styles.logo}></Image>
       <Text style={styles.login}>Login</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        onChangeText={(text) => setEmail(text)}
-        value={email}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        secureTextEntry={true}
-        onChangeText={(text) => setPassword(text)}
-        value={password}
-      />
-      <Button title="Login" onPress={handleLogin} color="#007BFF" />
+      <Text style={styles.desc}>masuk untuk melanjutkan</Text>
+      <View style={{ alignItems: "center" }}>
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          onChangeText={(text) => setEmail(text)}
+          value={email}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          secureTextEntry={true}
+          onChangeText={(text) => setPassword(text)}
+          value={password}
+        />
+        <Text style={styles.forgot}>Lupa Password?</Text>
+      </View>
+      <View style={{ width: 300, marginLeft: 40 }}>
+        <Button title="Masuk" onPress={handleLogin} />
+        <Text style={styles.text}>atau dengan</Text>
+        <Button title="Google" color={""} />
+        <Text style={styles.text}>Belum punya akun? Daftar</Text>
+      </View>
     </View>
   );
 }
@@ -36,31 +45,50 @@ export default function Login({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "white",
   },
   logo: {
     width: 70,
     height: 70,
+    marginLeft: 40,
   },
   login: {
-    fontSize: 24,
-    width: 50,
-    marginTop: 25,
-    marginBottom: 25,
+    fontSize: 30,
+    fontWeight: "800",
+    width: 72,
+    marginLeft: 40,
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  desc: {
+    color: "lightgrey",
+    fontSize: 20,
+    fontWeight: "400",
+    marginLeft: 40,
+    marginBottom: 50,
   },
   input: {
     width: 300,
     height: 40,
-    borderColor: "#007BFF",
+    borderColor: "lightgrey",
     borderWidth: 1,
-    marginBottom: 20,
+    marginTop: 20,
     paddingHorizontal: 10,
     borderRadius: 8,
     backgroundColor: "white",
   },
-  backgroundImage: {
-    width: "100%",
-    height: "100%",
+  forgot: {
+    color: "lightgrey",
+    width: 100,
+    marginTop: 10,
+    marginBottom: 60,
+    marginLeft: 230,
+  },
+  text: {
+    marginBottom: 15,
+    marginTop: 15,
+    textAlign: "center",
+    color: "lightgrey",
   },
 });

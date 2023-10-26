@@ -6,6 +6,8 @@ import Portofolio from "./components/portofolio";
 import Signup from "./components/signup";
 // import SplashScreen from './SplashScreen';
 
+// onPress={() => {setJumlah(jumlah+1)}}
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -15,7 +17,7 @@ export default function App() {
         {/* <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false}} /> */}
         <Stack.Screen
           name="Sign Up"
-          component={Signup}
+          component={Login}
           options={{ headerShown: false }}
         />
         <Stack.Screen
