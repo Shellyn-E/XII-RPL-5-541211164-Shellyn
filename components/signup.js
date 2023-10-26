@@ -1,17 +1,17 @@
 import React from "react";
 import { View, Text, TextInput, Button, StyleSheet, Image } from "react-native";
 
-export default function signup({ navigation }) {
+export default function Signup({ navigation }) {
   return (
     <View style={styles.container}>
       <Image source={require("../assets/logo.png")} style={styles.logo}></Image>
-      <Text style={styles.login}>Sign Up</Text>
+      <Text style={styles.signup}>Sign Up</Text>
       <TextInput style={styles.input} placeholder="Nama Lengkap" />
       <TextInput style={styles.input} placeholder="Username/Email" />
       <TextInput style={styles.input} placeholder="Password" />
       <TextInput style={styles.input} placeholder="Ulang Password" />
 
-      <Button title="Login" color="#007BFF" />
+      <Button title="Sign Up" color="#007BFF" />
     </View>
   );
 }
@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
   },
-  login: {
+  signup: {
     fontSize: 24,
-    width: 50,
+    width: 75,
     marginTop: 25,
     marginBottom: 25,
   },
