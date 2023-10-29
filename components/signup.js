@@ -25,9 +25,13 @@ export default function Signup() {
         <Text style={styles.forgot}>Lupa Password?</Text>
       </View>
       <View style={{ width: 300, marginLeft: 40 }}>
-        <CustomButton title="Daftar" />
+        <CustomButton title="Daftar" onPress={() => alert("Signed In")} />
         <Text style={styles.text}>atau dengan</Text>
-        <CustomButton title="Google" color={""} />
+        <CustomButton
+          title="Google"
+          color={"red"}
+          onPress={() => alert("Signed In Use Google")}
+        />
         <Text style={styles.text}>Sudah punya akun? Masuk</Text>
       </View>
     </View>

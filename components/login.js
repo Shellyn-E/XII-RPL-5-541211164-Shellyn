@@ -35,9 +35,13 @@ export default function Login({ navigation }) {
         <Text style={styles.forgot}>Lupa Password?</Text>
       </View>
       <View style={{ width: 300, marginLeft: 40 }}>
-        <Button title="Masuk" onPress={handleLogin} />
+        <CustomButton title="Masuk" onPress={() => alert("Loged In")} />
         <Text style={styles.text}>atau dengan</Text>
-        <Button title="Google" color={""} />
+        <Button
+          title="Google"
+          color={"red"}
+          onPress={() => alert("login use google")}
+        />
         <Text style={styles.text}>Belum punya akun? Daftar</Text>
       </View>
     </View>

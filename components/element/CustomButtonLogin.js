@@ -1,14 +1,14 @@
-// import React from "react";
-// import { Button } from "react-native";
+import React from "react";
+import { Button } from "react-native";
 
-// const CustomButton = ({ navigation }, props) => {
-//   const handleLogin = () => {
-//     navigation.navigate("Portofolio");
-//   };
+const CustomButton = (props) => {
+  // const handleLogin = () => {
+  //   onPress("Portfolio"); // Assuming you want to navigate to "Portfolio" when the button is pressed.
+  // };
 
-//   return (
-//     <Button title={props.title} color={props.color} onPress={handleLogin} />
-//   );
-// };
+  return (
+    <Button title={props.title} color={props.color} onPress={props.onPress} />
+  );
+};
 
-// export default CustomButton;
+export default CustomButton;
