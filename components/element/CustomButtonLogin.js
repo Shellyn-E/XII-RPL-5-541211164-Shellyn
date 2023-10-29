@@ -1,10 +1,14 @@
-import React from "react";
-import { Button } from "react-native";
+// import React from "react";
+// import { Button } from "react-native";
 
-const CustomButton = (props) => {
-  return (
-    <Button title={props.title} color={props.color} onPress={props.onPress} />
-  );
-};
+// const CustomButton = ({ navigation }, props) => {
+//   const handleLogin = () => {
+//     navigation.navigate("Portofolio");
+//   };
 
-export default CustomButton;
+//   return (
+//     <Button title={props.title} color={props.color} onPress={handleLogin} />
+//   );
+// };
+
+// export default CustomButton;

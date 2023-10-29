@@ -9,6 +9,7 @@ import {
   TextInput,
   Button,
 } from "react-native";
+import CustomText from "./element/CustomText";
 import CustomInput from "./element/CustomInput";
 import CustomImage from "./element/CustomImage";
 import CustomButton from "./element/CustomButtonPorto";

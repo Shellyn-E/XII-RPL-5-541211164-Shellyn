@@ -9,7 +9,7 @@ export default function Login({ navigation }) {
 
   const handleLogin = () => {
     if (email === "shellyneuriska@gmail.com" && password === "12345") {
-      navigation.navigate("HomeScreen");
+      navigation.navigate("Portofolio");
     }
   };
 
@@ -35,9 +35,9 @@ export default function Login({ navigation }) {
         <Text style={styles.forgot}>Lupa Password?</Text>
       </View>
       <View style={{ width: 300, marginLeft: 40 }}>
-        <CustomButton title="Masuk" onPress={""} />
+        <Button title="Masuk" onPress={handleLogin} />
         <Text style={styles.text}>atau dengan</Text>
-        <CustomButton title="Google" color={""} />
+        <Button title="Google" color={""} />
         <Text style={styles.text}>Belum punya akun? Daftar</Text>
       </View>
     </View>
