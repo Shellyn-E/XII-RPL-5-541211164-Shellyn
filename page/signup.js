@@ -1,48 +1,57 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet, Image } from "react-native";
-import CustomButton from "./element/CustomButtonLogin";
-import CustomInput from "./element/CustomInput";
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import CustomButton from "./components/CustomButtonLogin";
+import CustomInput from "./components/CustomInput";
 
-export default function Login({ navigation }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = () => {
-    if (email === "shellyneuriska@gmail.com" && password === "12345") {
-      navigation.navigate("Portofolio");
-    }
-  };
-
+export default function Signup({ navigation }) {
   return (
     <View style={styles.container}>
       <Image source={require("../assets/logo.png")} style={styles.logo}></Image>
-      <Text style={styles.login}>Login</Text>
+      <Text style={styles.signup}>Sign Up</Text>
       <Text style={styles.desc}>masuk untuk melanjutkan</Text>
       <View style={{ alignItems: "center" }}>
-        <CustomInput
-          style={styles.input}
-          placeholder="Email"
-          onChangeText={(text) => setEmail(text)}
-          value={email}
-        />
+        <CustomInput style={styles.input} placeholder="Nama Lengkap" />
+        <CustomInput style={styles.input} placeholder="Username / Email" />
         <CustomInput
           style={styles.input}
           placeholder="Password"
           secureTextEntry={true}
-          onChangeText={(text) => setPassword(text)}
-          value={password}
+        />
+        <CustomInput
+          style={styles.input}
+          placeholder="Ulang Password"
+          secureTextEntry={true}
         />
         <Text style={styles.forgot}>Lupa Password?</Text>
       </View>
       <View style={{ width: 300, marginLeft: 40 }}>
-        <CustomButton title="Masuk" onPress={() => alert("Loged In")} />
-        <Text style={styles.text}>atau dengan</Text>
         <Button
+          title="Daftar"
+          onPress={() => navigation.navigate("Portofolio")}
+        />
+        <Text style={styles.text}>atau dengan</Text>
+        <CustomButton
           title="Google"
           color={"red"}
-          onPress={() => alert("login use google")}
+          onPress={() => alert("Signed In Use Google")}
         />
-        <Text style={styles.text}>Belum punya akun? Daftar</Text>
+      </View>
+      <View style={styles.viewMasuk}>
+        <Text style={styles.textMasuk}>Sudah punya akun?</Text>
+        <TouchableOpacity
+          style={{ width: 50 }}
+          onPress={() => navigation.navigate("Login")}
+        >
+          <Text style={styles.masuk}>Masuk</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -59,10 +68,10 @@ const styles = StyleSheet.create({
     height: 70,
     marginLeft: 40,
   },
-  login: {
+  signup: {
     fontSize: 30,
     fontWeight: "800",
-    width: 72,
+    width: 100,
     marginLeft: 40,
     marginTop: 10,
     marginBottom: 5,
@@ -96,5 +105,18 @@ const styles = StyleSheet.create({
     marginTop: 15,
     textAlign: "center",
     color: "lightgrey",
+  },
+  viewMasuk: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 4,
+    marginTop: 15,
+  },
+  textMasuk: {
+    width: 100,
+    color: "lightgrey",
+  },
+  masuk: {
+    color: "#5393F7",
   },
 });

@@ -1,9 +1,9 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Login from "./components/login";
-import Portofolio from "./components/portofolio";
-import Signup from "./components/signup";
+import Login from "./page/login";
+import Portofolio from "./page/portofolio";
+import Signup from "./page/signup";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +24,7 @@ export default function App() {
         <Stack.Screen
           name="Portofolio"
           component={Portofolio}
-          options={{ headerShown: false }}
+          // options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

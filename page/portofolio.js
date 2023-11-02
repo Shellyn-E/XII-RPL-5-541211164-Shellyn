@@ -9,10 +9,9 @@ import {
   TextInput,
   Button,
 } from "react-native";
-import CustomText from "./element/CustomText";
-import CustomInput from "./element/CustomInput";
-import CustomImage from "./element/CustomImage";
-import CustomButton from "./element/CustomButtonPorto";
+import CustomInput from "./components/CustomInput";
+import CustomImage from "./components/CustomImage";
+import CustomButton from "./components/CustomButtonPorto";
 
 export default function Portofolio() {
   const [jumlah, setJumlah] = useState(0);
